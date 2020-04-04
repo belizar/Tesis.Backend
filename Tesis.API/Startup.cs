@@ -1,24 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GraphiQl;
-using GraphQL;
-using GraphQL.Types;
+﻿using GraphiQl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.Swagger;
-using Tesis.API.GraphQL;
-using Tesis.Repositories.Definition;
-using Tesis.Repositories.Implementations;
-using FluentValidation;
 using FluentValidation.AspNetCore;
 
 namespace Tesis.API
@@ -36,7 +20,7 @@ namespace Tesis.API
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddMvc();
+            services.AddMvc().AddFluentValidation();
             services.AddDbConfig(Configuration);
             services.AddHttpContextAccessor();
             services.AddGraphQLConfig();
