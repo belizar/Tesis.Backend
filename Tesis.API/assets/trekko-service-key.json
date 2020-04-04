@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "Tesis-58f7e",
+  "private_key_id": "b84fc792d50d5664cc3a09abcef8bcb9c7000793",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDhgUVoozFowH8r\n7rC1amuXCvDVsbuI33r9KxuG0jCFrW9+rV2DxIEuPqSVbcwgWuo/iR38ghXHaZHn\nw32AEkOuTv5ibornUwJ1HrUjz+K7pDRl+i2ueTNStIs4AZh53Yq9W5eELNtFEULS\nWv4Xu8i1stvNqDmklVx1SI0PEzLEJ5tAtlMliqaDw0XDGq1EstQn/1gaZ+SisLvg\nkv3eRwD0dZGq3D2ja5hQ3bOS2kCduaZIiDrIIR+EYTqQ8GQDYpp5PkBo0ZXbQh9N\nLQf2mU6QTRfhBYgSqqWS0FrbfA/sLtec/zSY7y+QwqK9PHxN1SA73C8VuTLEGyLL\n/iozO2z1AgMBAAECgf98kayF4PWqUqvtg4KaCe+PwGYe+ySyt2vOmRbboxYAF46V\nAQUSL7rXO5jZ8uKP/P4+8BULJ9EKwdvs61CohBkJxm6VG/t0ovujNxNZH71gFOqH\nwBZRYHe5eC0aWHH3in+ERX8CxMSw9+1ccRIWijqVefgcjeafGY25kW+v+YBRr4XV\n1NDtuY8BA+q1pU2uI0cilG2JU6/jbZrUxRDi9a56U1rt3lDUoDD6lSQzyxGjXK1q\nMRqWE8ctVWStFnpszqlLQpmvr/9uMDlpnvZpJ8AjLJyV2SFQa+xSEX6oDE6jTnB7\nqsFDz8qrvH2LPZWejoK5mtTlJjgpXFaXWTRlYaECgYEA9GUIYHCdtQtDyKNcM/wm\nGefxDtMbMQwyHf5w9pQwNzi5WVjh55WQU2zbiS59XKc5hQwTPkft1G+PQYjYCbZq\nzPs1LxP4F90lJhyRfYaBTloNS6Jj1jbHLOzrBT/mFu0F3hfRumoDao5eKp3zIkjl\ndwOSVrV1iyOBgTMu7MA1G2ECgYEA7Daba6yN7ZY7v2UGGynhvATgdqBLiuuE0Gcc\nohWyMhY8JScu17r+E6xzY/SMEcvIa9xMOMqyQbhyNCYmQO8Sf55138wbYlLbrNNb\np1gyQlwZVObBlmlL4raBWbn7HGmbySzi03Ynjm6BJDFFzOwXZu/4lT71weqs8OHw\nCxLs7hUCgYA0DQiZsaKFGp8XLmPG1p8uyU14ANI7wgMyjCx299zFBhnDw8BpWFti\nyT6AmxwsDZmckpPOofcvVYtHQ+PvPaDFg4MyQaiHPJxa357FA06q51cJks58ozIM\niXEMry1MGLM1OBF9CHMt0KCRpw5PcQMeM+6I9SDRv4AnikUmO1GUQQKBgQDfLxFW\ngSlwzLwTMP6996qDng//xaDa14Eb7/EL7Hf7/ypA6G7IArRCHnTAgrU9s0/hKbsT\nBeG7Wuz8/Paz76+IyU4ScKWHF0bcWq+ExD5omOCOaaGL3l2HDm3VO3ZZ+Cbrw+9l\nYYQqfZqjebK71m6eIiq7yUsnN/bDepb1v6IBqQKBgEdoikJzU3MEn82OsAsL6WkY\nQRRJnnN/n0/E6GNLy6eEvcGewM/pOQIGL0j+HRecY81jSd/WB8ohP77/Eba511e9\nMFpRlaiqHyFeD5ZroKD8fif8QnocSalIH2QlnfqpHvhw9KJ8f96hfnsuHYoEU45R\nGCogl3PlgOuA7MggljCC\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-npfa5@Tesis-58f7e.iam.gserviceaccount.com",
+  "client_id": "106273605988640881585",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-npfa5%40Tesis-58f7e.iam.gserviceaccount.com"
+}

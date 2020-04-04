@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tesis.Bussiness.Contracts\Tesis.Bussiness.Definition.csproj" />
+    <ProjectReference Include="..\Tesis.Entities\Tesis.Entities.csproj" />
+    <ProjectReference Include="..\Tesis.Repositories.Definitions\Tesis.Repositories.Definition.csproj" />
+    <ProjectReference Include="..\Tesis.Repositories.Implementations\Tesis.Repositories.Implementation.csproj" />
+  </ItemGroup>
+
+</Project>
