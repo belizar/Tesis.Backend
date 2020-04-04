@@ -1,12 +1,25 @@
-﻿using GraphiQl;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using GraphiQl;
+using GraphQL;
+using GraphQL.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using Tesis.API.GraphQL;
+using Tesis.Repositories.Definition;
+using Tesis.Repositories.Implementations;
+using FluentValidation;
 using FluentValidation.AspNetCore;
-using Newtonsoft.Json.Serialization;
 
 namespace Tesis.API
 {
@@ -22,10 +35,8 @@ namespace Tesis.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                    .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                    .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver())
-                    .AddFluentValidation();
+
+            services.AddMvc();
             services.AddDbConfig(Configuration);
             services.AddHttpContextAccessor();
             services.AddGraphQLConfig();
@@ -36,7 +47,7 @@ namespace Tesis.API
             services.AddCors();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo() { Title = "My API", Version = "v1" });
             });
         }
 
@@ -61,10 +72,17 @@ namespace Tesis.API
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
-            app.UseCors(config => {
+
+            app.UseRouting();
+            app.UseCors(config =>
+            {
                 config.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             });
-            app.UseMvc();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
