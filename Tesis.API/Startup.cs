@@ -1,9 +1,10 @@
-﻿using GraphiQl;
+﻿
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
+using GraphQL.Server.Ui.GraphiQL;
 
 namespace Tesis.API
 {
@@ -19,8 +20,10 @@ namespace Tesis.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
-            services.AddMvc().AddFluentValidation();
+            services.AddControllers()
+                    .AddNewtonsoftJson();
+            services.AddMvc()
+                    .AddFluentValidation();
             services.AddDbConfig(Configuration);
             services.AddHttpContextAccessor();
             services.AddGraphQLConfig();
@@ -49,7 +52,9 @@ namespace Tesis.API
             }
 
             //app.UseHttpsRedirection();
-            app.UseGraphiQl();
+            app.UseGraphiQLServer( new GraphiQLOptions(){
+                  
+            });
             app.UseAuthentication();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
