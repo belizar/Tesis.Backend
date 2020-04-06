@@ -24,29 +24,10 @@ namespace Tesis.Repositories.Implementation.Repositories
             throw new System.NotImplementedException();
         }
 
-        public async Task<Page<Cliente>> GetPage(int limit, int cursor)
+        public async Task<Page<Cliente>> GetPage(int take, int skip)
         {
 
-            var page = new Page<Cliente>();
-
-            var query = this.context
-                             .Clientes
-                             .OrderBy(x => x.ID)
-                             .WhereIsNotNull(() => cursor > 0, x => x.ID >= cursor)
-                             .Take(limit + 1);
-
-
-            page.Data = await query.ToListAsyncSafe();
-
-            if (page.Data.Count() == (limit + 1))
-            {
-                page.PreviousId = cursor;
-                page.NextId = page.Data.Last().ID;
-                page.Data = page.Data.Where(x => x.ID != page.NextId);
-                page.HasNextPage = true;
-            }
-            
-            return await Task.FromResult(page);
+            return await GetPage(this.context.Clientes, take, skip);
         }
 
         public override IQueryable<Cliente> CustomFindAll(DbSet<Cliente> set)

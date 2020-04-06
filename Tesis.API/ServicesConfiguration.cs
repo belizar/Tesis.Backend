@@ -28,7 +28,7 @@ namespace Tesis.API
     {
 
         public static void AddGraphQLConfig(this IServiceCollection @this)
-        {
+        {   
             @this.AddScoped<IDependencyResolver>(s => new FuncDependencyResolver(s.GetRequiredService));
             @this.AddScoped<ISchema, TesisSchema>();
             @this.AddScoped<IDocumentExecuter, DocumentExecuter>();

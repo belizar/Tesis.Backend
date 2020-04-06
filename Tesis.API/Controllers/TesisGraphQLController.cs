@@ -36,6 +36,7 @@ namespace Tesis.API.Controllers
                 Schema = _schema,
                 Query = query.Query,
                 Inputs = inputs,
+                
                 ExposeExceptions = true,
                 FieldNameConverter = new PascalCaseFieldNameConverter()
             };

@@ -27,7 +27,7 @@ namespace Tesis.API.Controllers.Bussiness
             return Ok();
         }
 
-        [Route("aprrove/{id}")]
+        [Route("approve/{id}")]
         [HttpPost]
         public async Task<IActionResult> Approve([FromRoute] string id)
         {

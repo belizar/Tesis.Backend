@@ -11,5 +11,6 @@ namespace Tesis.Entities
         public bool HasNextPage { get; set; }
         public int NextId { get; set; }
         public int PreviousId { get; set; }
+        public int Total { get; set; }
     }
 }

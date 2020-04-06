@@ -10,6 +10,7 @@ using Tesis.Entities;
 using Tesis.Models;
 using Tesis.Repositories.Definition;
 using Tesis.Repositories.Implementations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Tesis.Repositories.Implementation
 {
@@ -62,6 +63,27 @@ namespace Tesis.Repositories.Implementation
             this.context.Set<T>().Update(entity);
 
             return await Task.FromResult(entity);
+        }
+
+        protected async Task<Page<T>> GetPage(Microsoft.EntityFrameworkCore.DbSet<T> dbset, int take, int skip)
+        {
+
+            var page = new Page<T>();
+
+            var query = dbset.OrderBy(x => x.ID)
+                             .Skip(skip)
+                             .Take(take);
+
+            page.Total = await dbset.CountAsyncSafe();
+
+            page.Data = await query.ToListAsyncSafe();
+
+            if (page.Data.Count() == take)
+            {
+                page.HasNextPage = true;
+            }
+
+            return await Task.FromResult(page);
         }
 
     }

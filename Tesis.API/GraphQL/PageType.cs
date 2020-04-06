@@ -10,8 +10,7 @@ namespace Tesis.API.GraphQL
         public PageType()
         {
             Field(x => x.HasNextPage, type: typeof(BooleanGraphType));
-            Field(x => x.NextId, type: typeof(IntGraphType));
-            Field(x => x.PreviousId, type: typeof(IntGraphType));
+            Field(x => x.Total, type: typeof(IntGraphType));
             Field(x => x.Data, type: typeof(ListGraphType<TType>));
         }
     }

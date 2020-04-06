@@ -16,28 +16,9 @@ namespace Tesis.Repositories.Implementation.Repositories
             this.context = context;
         }
 
-        public async Task<Page<Credito>> GetPage(int limit, int cursor)
+        public async Task<Page<Credito>> GetPage(int take, int skip)
         {
-            var page = new Page<Credito>();
-
-            var query = this.context
-                             .Creditos
-                             .OrderBy(x => x.ID)
-                             .WhereIsNotNull(() => cursor > 0, x => x.ID >= cursor)
-                             .Take(limit + 1);
-
-
-            page.Data = await query.ToListAsyncSafe();
-
-            if (page.Data.Count() == (limit + 1))
-            {
-                page.PreviousId = cursor;
-                page.NextId = page.Data.Last().ID;
-                page.Data = page.Data.Where(x => x.ID != page.NextId);
-                page.HasNextPage = true;
-            }
-
-            return await Task.FromResult(page);
+            return await GetPage(this.context.Creditos, take, skip);
         }
     }
 }

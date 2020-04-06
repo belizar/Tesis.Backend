@@ -11,25 +11,26 @@ using Tesis.Repositories.Implementations;
 
 namespace Tesis.Repositories.Test
 {
-    public class TiposDeMovimientoTest
+    [TestFixture]
+    public class PageClienteTest
     {
-        private ITiposDeMovimientoRepository repo;
+        private IClienteRepository repo;
 
         [SetUp]
         public void Init()
         {
             var optionsBuilder = new DbContextOptionsBuilder<AlimaDataContext>();
             optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Alima;User Id=SA;Password=3Lmund0!");
-            repo = new TiposDeMovimientoRepository(new AlimaDataContext(optionsBuilder.Options));
+            repo = new ClienteRepository(new AlimaDataContext(optionsBuilder.Options));
         }
 
         [Test]
-        public async Task ExistenTiposDeMovimiento()
+        public async Task TraeUnaPaginaDeClientes()
         {
-            var tipos = await repo.FindAll();
-
-            Assert.AreEqual(tipos != null, true);
-            Assert.AreEqual(tipos.Count() > 0, true);
+            var page = await repo.GetPage(5, 0);
+            var secondPage = await repo.GetPage(5, 5);
+            // Assert.AreEqual(tipos != null, true);
+            // Assert.AreEqual(tipos.Count() > 0, true);
         }
     }
 }

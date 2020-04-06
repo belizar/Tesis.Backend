@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tesis.Entities", "Tesis.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Test", "Api.Test\Api.Test.csproj", "{A5222E4D-F116-4F78-9F63-AD4F1352DACD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tesis.Repositories.Test", "Tesis.Repositories.Test\Tesis.Repositories.Test.csproj", "{94D2F115-E3DA-49BE-98AC-1E3A6B86CFF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{A5222E4D-F116-4F78-9F63-AD4F1352DACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5222E4D-F116-4F78-9F63-AD4F1352DACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5222E4D-F116-4F78-9F63-AD4F1352DACD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94D2F115-E3DA-49BE-98AC-1E3A6B86CFF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94D2F115-E3DA-49BE-98AC-1E3A6B86CFF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94D2F115-E3DA-49BE-98AC-1E3A6B86CFF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94D2F115-E3DA-49BE-98AC-1E3A6B86CFF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

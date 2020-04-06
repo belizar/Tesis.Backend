@@ -34,6 +34,15 @@ namespace Tesis.Repositories.Implementation
             return source.ToListAsync();
         }
 
+        public static Task<int> CountAsyncSafe<TSource>(this IQueryable<TSource> source)
+        {
+            if (source == null)
+                throw new ArgumentNullException(nameof(source));
+            if (!(source is IDbAsyncEnumerable<TSource>))
+                return Task.FromResult(source.Count());
+            return source.CountAsync();
+        }
+
         public static bool OnlyActives(EntidadBase entity) => entity.Baja == false;
 
 

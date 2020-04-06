@@ -24,7 +24,16 @@ namespace Tesis.API.GraphQL
                 resolve: context => repository.Parametros.FindAll()
             );
 
-
+            Field<PageClientType>(
+                "PageCliente",
+                 arguments: new QueryArguments(new QueryArgument[] {
+                    new QueryArgument(typeof(IntGraphType)) { DefaultValue = 5, Name = "Take" },
+                    new QueryArgument(typeof(IntGraphType)) { DefaultValue = 0, Name = "Skip" }
+                }),
+                resolve: context => repository.Clientes.GetPage(context.GetArgument<int>("Take"),
+                                                                context.GetArgument<int>("Skip"))
+            );
+            
             Field<ClienteType>(
                 "ClientesBy",
                 arguments: new QueryArguments(new QueryArgument[] {
@@ -56,16 +65,6 @@ namespace Tesis.API.GraphQL
                                     }
                 );
 
-            Field<PageClientType>(
-                "PageClient",
-                arguments: new QueryArguments(new QueryArgument[] {
-                    new QueryArgument(typeof(IntGraphType)) { DefaultValue = 10, Name = "limit" },
-                    new QueryArgument(typeof(IntGraphType)) { DefaultValue = 0, Name = "next" }
-                }),
-                resolve: context => repository.Clientes
-                                              .GetPage(context.GetArgument<int>("limit"),
-                                                       context.GetArgument<int>("next"))
-            );
 
             Field<PageEstadoDeCreditoType>(
                 "PageEstadosDeCredito",
