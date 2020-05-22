@@ -10,8 +10,8 @@ using Tesis.Repositories.Implementations;
 namespace Tesis.Repositories.Implementation.Migrations
 {
     [DbContext(typeof(AlimaDataContext))]
-    [Migration("20200302025902_telefono_2")]
-    partial class telefono_2
+    [Migration("20200415204556_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,7 +56,7 @@ namespace Tesis.Repositories.Implementation.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
 
-                    b.Property<int>("Cliente_ID");
+                    b.Property<int>("ClienteID");
 
                     b.Property<string>("Descripcion");
 
@@ -64,7 +64,7 @@ namespace Tesis.Repositories.Implementation.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("Cliente_ID");
+                    b.HasIndex("ClienteID");
 
                     b.ToTable("Telefonos");
                 });
@@ -386,7 +386,7 @@ namespace Tesis.Repositories.Implementation.Migrations
                 {
                     b.HasOne("Tesis.Models.Dominio.Cliente.Cliente", "Cliente")
                         .WithMany("Telefonos")
-                        .HasForeignKey("Cliente_ID")
+                        .HasForeignKey("ClienteID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

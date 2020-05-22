@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tesis.Repositories.Implementation.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -87,14 +87,15 @@ namespace Tesis.Repositories.Implementation.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Baja = table.Column<bool>(nullable: false, defaultValue: false),
                     Numero = table.Column<long>(nullable: false),
-                    Cliente_ID = table.Column<int>(nullable: false)
+                    Descripcion = table.Column<string>(nullable: true),
+                    ClienteID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Telefonos", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Telefonos_Clientes_Cliente_ID",
-                        column: x => x.Cliente_ID,
+                        name: "FK_Telefonos_Clientes_ClienteID",
+                        column: x => x.ClienteID,
                         principalTable: "Clientes",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.NoAction);
@@ -250,7 +251,7 @@ namespace Tesis.Repositories.Implementation.Migrations
                         column: x => x.CreditoID,
                         principalTable: "Creditos",
                         principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_GaranteEnCredito_Clientes_GaranteID",
                         column: x => x.GaranteID,
@@ -345,9 +346,9 @@ namespace Tesis.Repositories.Implementation.Migrations
                 column: "TipoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Telefonos_Cliente_ID",
+                name: "IX_Telefonos_ClienteID",
                 table: "Telefonos",
-                column: "Cliente_ID");
+                column: "ClienteID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Trabajos_ClienteID",

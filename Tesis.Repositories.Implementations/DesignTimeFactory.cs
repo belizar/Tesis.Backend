@@ -12,7 +12,7 @@ namespace Tesis.Repositories.Implementation
         public AlimaDataContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<AlimaDataContext>();
-            optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Alima;User Id=SA;Password=3Lmund0!");
+            optionsBuilder.UseSqlServer("Data Source=localhost\\SQLEXPRESS;Initial Catalog=AlimaTest;Integrated Security=True");
 
             return new AlimaDataContext(optionsBuilder.Options);
         }
