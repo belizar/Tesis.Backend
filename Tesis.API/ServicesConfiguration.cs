@@ -106,6 +106,11 @@ namespace Tesis.API
             @this.AddScoped<IValidator<Parametros>, ParametroValidation>();
         }
 
+        public static void AddValidationCredito(this IServiceCollection @this)
+        {
+            @this.AddScoped<IValidator<Credito>, CreditoValidation>();
+        }
+
         public static void AddValidationErrors(this IServiceCollection @this)
         {
             @this.Configure<ApiBehaviorOptions>(options =>

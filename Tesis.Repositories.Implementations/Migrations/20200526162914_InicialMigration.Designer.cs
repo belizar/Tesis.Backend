@@ -10,8 +10,8 @@ using Tesis.Repositories.Implementations;
 namespace Tesis.Repositories.Implementation.Migrations
 {
     [DbContext(typeof(AlimaDataContext))]
-    [Migration("20200415204556_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200526162914_InicialMigration")]
+    partial class InicialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,6 +84,8 @@ namespace Tesis.Repositories.Implementation.Migrations
                     b.Property<string>("Cargo");
 
                     b.Property<int>("ClienteID");
+
+                    b.Property<DateTime>("FechaDeEgreso");
 
                     b.Property<DateTime>("FechaDeIngreso");
 

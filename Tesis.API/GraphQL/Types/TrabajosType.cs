@@ -18,6 +18,7 @@ namespace Tesis.API.GraphQL.Types
             Field(x => x.LugarDeTrabajo, type: typeof(StringGraphType));
             Field(x => x.FechaDeIngreso, type: typeof(DateGraphType));
             Field(x => x.TelefonoLaboral, type: typeof(StringGraphType));
+            Field(x => x.FechaDeEgreso, type: typeof(DateGraphType));
 
             Field<ClienteType>(nameof(Trabajo.Cliente));
             Field<DomicilioType>(nameof(Trabajo.DomicilioLaboral));

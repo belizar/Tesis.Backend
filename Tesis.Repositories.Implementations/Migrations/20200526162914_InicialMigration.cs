@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Tesis.Repositories.Implementation.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InicialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -122,6 +122,7 @@ namespace Tesis.Repositories.Implementation.Migrations
                     Piso = table.Column<int>(nullable: true),
                     Depto = table.Column<string>(nullable: true),
                     TelefonoLaboral = table.Column<long>(nullable: false),
+                    FechaDeEgreso = table.Column<DateTime>(nullable: false),
                     ClienteID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>

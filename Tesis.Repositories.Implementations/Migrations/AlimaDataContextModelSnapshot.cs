@@ -83,6 +83,8 @@ namespace Tesis.Repositories.Implementation.Migrations
 
                     b.Property<int>("ClienteID");
 
+                    b.Property<DateTime>("FechaDeEgreso");
+
                     b.Property<DateTime>("FechaDeIngreso");
 
                     b.Property<string>("LugarDeTrabajo");

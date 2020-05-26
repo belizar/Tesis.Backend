@@ -19,7 +19,7 @@ namespace Tesis.Models.Dominio.Cliente
         public DateTime FechaDeIngreso { get; set; }
         public virtual Domicilio DomicilioLaboral { get; set; }
         public long TelefonoLaboral { get; set; }
-
+        public DateTime FechaDeEgreso { get; set; }
         public Cliente Cliente { get; set; }
         public int ClienteID { get; set; }
     }

@@ -27,6 +27,7 @@ namespace Tesis.API
             services.AddRepositories();
             services.AddBussinessServices();
             services.AddValidationServices();
+            services.AddValidationCredito();
             services.AddAuthentication(Configuration);
             services.AddCors();
             services.AddSwaggerGen(c =>

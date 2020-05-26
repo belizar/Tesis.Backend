@@ -18,6 +18,7 @@ namespace Tesis.Repositories.Implementation.Mappers
             entity.Property(x => x.Sueldo);
             entity.Property(x => x.Cargo);
             entity.Property(x => x.FechaDeIngreso);
+            entity.Property(x => x.FechaDeEgreso);
             entity.Property(x => x.TelefonoLaboral);
 
             entity.OwnsOne(x => x.DomicilioLaboral, dom => {
